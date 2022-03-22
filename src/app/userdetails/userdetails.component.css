@@ -1,0 +1,79 @@
+.image{
+  width: 200px;
+  height: 200px;
+  border: 2px solid #0e000b;
+  border-radius: 50%;
+  margin: 10px;
+}
+.col1{
+  width: 50%;
+  text-align: end;
+}
+.col2{
+  width: 40%;
+  padding-top: 50px;
+  font-size: xx-large;
+  color: #EDD2F3;
+}
+
+
+.card1{
+  margin-top: 5px;
+  background-color: #181D31;
+  border: 2px solid #080808;
+}
+
+.row1 .col :hover{
+  background-color: rgb(27, 27, 48);
+color: #F7F7F7;
+animation: scale 0.4s linear;
+  animation-fill-mode: forwards;
+  transform: scale(1.02);
+}
+
+
+@media screen and (max-width:600px){
+  .row{
+      text-align: center;
+  }
+  .col1{
+      width: 100%;
+      text-align: center;
+  }
+  .col2{
+      width: 100%;
+      font-size: xx-large;
+      color: #EDD2F3;
+  }
+  .card1:hover{
+      background-color:  #9A0680;
+      border: 2px solid #6867AC;
+  }
+  #formwidth{
+    width: 100%;
+    padding: 2%;
+  }
+  #formwidth input{
+    width: 70%;
+  }
+  #formwidth label{
+    display: block;
+    margin: auto;
+  }
+  
+}
+
+/* modal */
+
+
+#formwidth{
+  width: 500px;
+}
+.modalcol{
+  background-image: linear-gradient(40deg, #00fffc 45%, darkblue 100%);
+}
+button{
+  background-image: linear-gradient(#050A30,#000C66);
+}
+
+

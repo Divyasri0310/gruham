@@ -1,0 +1,48 @@
+<div class="container" style="margin-top:50px;">
+  <div class="noapp" *ngIf="myadds.length==0">
+    <h1 class="noapp"> NO APPARTMENTS ADDED</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+    <div class="mb-3" id="hovering" *ngFor="let v of myadds;let ind=index">
+   
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-5 card-image">
+            <img src={{v.buildingPic}} class="img-fluid rounded-start w-100 h-100" alt="...">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+
+              <a class="card-action" href="#" style="float: right;">
+                <fa-icon [icon]="faHearticon"></fa-icon>
+              </a>
+              <p>City: {{v.city}}</p>
+              <p>Area: {{v.Area}}</p>
+              <p>street: {{v.street}}, Pincode: {{v.pincode}}</p>
+              <p>bhkType: {{v.bhkType}}</p>
+              <h1 style="font-weight: bold;">Rent: &#x20B9;{{v.rent}}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-evenly">
+          <a class="card-button" (click)="delete(ind)">Remove <i style="vertical-align: middle;" class="bi bi-x-circle-fill"></i></a>
+          <a class="card-button" (click)="update(template,v,ind)">Update <i style="vertical-align: middle;" class="bi bi-pencil-square"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body text-success fw-bold text-center bg-light">
+      <form #formref (ngSubmit)="submit()" [formGroup]="propertyUpdate">
+        <h1 class="text-center">Add update</h1>
+          <label for="rent">rent</label>
+          <input type="text" name="rent" class="form-control" formControlName="rent" required>
+          <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p>{{registrationError.errorMessage}}</p>
+          </div>
+        <button class="btn btn-primary d-block mt-4 mx-auto" type="submit" >Change</button>
+      </form>
+  </div>
+</ng-template>

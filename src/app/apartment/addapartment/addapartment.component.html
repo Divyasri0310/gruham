@@ -1,0 +1,114 @@
+
+
+<div class="wrapper">
+    <div class="container">
+        <form #formref="ngForm" (ngSubmit)="submit()"  [formGroup]="addRegistration" >
+            <h1 class="text-center heading"><i class="bi bi-house-heart"></i>Add Your property<i class="bi bi-house-heart"></i></h1>
+          <!-- details -->
+            <div class="name">
+                <div>
+                    <label for="OwnerName">OwnerName<span class="text-danger">*</span></label>
+                    <input type="text" name="OwnerName" class="form-control" formControlName="OwnerName">
+                    <!-- validation -->
+                    <div *ngIf="(OwnerName.invalid && OwnerName.touched)" class="text-danger">
+                      <p *ngIf="OwnerName.errors?.['required']">*This is required</p>
+                    </div>
+                    <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+                      <p class="w-100" *ngIf="(registrationError.errorMessage =='ownername is not matched')">{{registrationError.errorMessage}}</p>
+                    </div>
+                </div>
+              
+                  <div>
+                      <label for="email">Email<span class="text-danger">*</span></label>
+                      <input type="email" name="email" class="form-control" formControlName="email">
+                      <div *ngIf="(email.invalid && email.touched)" class="text-danger">
+                        <p *ngIf="email.errors?.['required']">*This is required</p>
+                      </div>
+                      <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+                        <p class="w-100" *ngIf="(registrationError.errorMessage =='email not matched')">{{registrationError.errorMessage}}</p>
+                      </div>  
+                  </div>
+                
+                  <div>
+                      <label for="phoneNo">phoneNo<span class="text-danger">*</span></label>
+                      <input type="number" name="phoneNo" class="form-control" formControlName="phoneNo">
+                      <div *ngIf="(phoneNo.invalid && phoneNo.touched)" class="text-danger">
+                        <p *ngIf="phoneNo.errors?.['required']">*This is required</p>
+                      </div>
+                      <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+                        <p class="w-100" *ngIf="(registrationError.errorMessage =='phoneno not matched')">{{registrationError.errorMessage}}</p>
+                      </div>
+                  </div>
+             </div> 
+  
+             <!-- address and data -->
+            <div class="address-info" formGroupName="property">
+              <div class="locate">
+                <div class="child">
+                  <label for="city">city<span class="text-danger">*</span></label>
+                  <input type="text" name="city" class="form-control" formControlName="city">
+                  <div *ngIf="(city.invalid && city.touched)" class="text-danger">
+                    <p *ngIf="city.errors?.['required']">*This is required</p>
+                  </div>
+              </div>
+  
+                <div class="child">
+                  <label for="Area">Area<span class="text-danger">*</span></label>
+                  <input type="text" name="Area" class="form-control" formControlName="Area">
+                  <div *ngIf="(Area.invalid && Area.touched)" class="text-danger">
+                    <p *ngIf="Area.errors?.['required']">*This is required</p>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="locate">
+                  <div class="child">
+                    <label for="street">street<span class="text-danger">*</span></label>
+                    <input type="text" name="street" class="form-control" formControlName="street">
+                    <div *ngIf="(street.invalid && street.touched)" class="text-danger">
+                      <p *ngIf="street.errors?.['required']">*This is required</p>
+                    </div>
+                  </div>
+  
+  
+                  <div class="child">
+                    <label for="pincode">pincode<span class="text-danger">*</span></label>
+                    <input type="text" name="pincode" class="form-control" formControlName="pincode">
+                    <div *ngIf="(pincode.invalid && pincode.touched)" class="text-danger">
+                      <p *ngIf="pincode.errors?.['required']">*This is required</p>
+                    </div>
+                  </div>
+              </div>
+               
+                
+            </div>
+            <!-- file and rent -->
+            <div class="cc-info" formGroupName="property">
+              <div>
+                <label for="rent">rent<span class="text-danger">*</span></label>
+                <input type="text" name="rent" class="form-control" formControlName="rent">
+                <div *ngIf="(rent.invalid && rent.touched)" class="text-danger">
+                  <p *ngIf="rent.errors?.['required']">*This is required</p>
+                </div>
+              </div>
+              <div>
+                <label for="bhkType">bhkType<span class="text-danger">*</span></label>
+                <input type="text" name="bhkType" class="form-control" formControlName="bhkType">
+                <div *ngIf="(bhkType.invalid && bhkType.touched)" class="text-danger">
+                  <p *ngIf="bhkType.errors?.['required']">*This is required</p>
+                </div>
+              </div>    
+            </div>
+  
+            
+            <div class="file">
+              <label for="photo">Upload photo<span class="text-danger">*</span></label>
+              <input type="file" class="form-control"  name="photo" id="photo" #profile (input)="onFileSelect(profile.files[0])">
+            </div>
+            <!-- submit -->
+            <div class="btns">
+               <button class="btn btn-success d-block mt-4 mx-auto" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+  </div>

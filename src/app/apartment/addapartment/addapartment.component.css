@@ -1,0 +1,134 @@
+.wrapper{
+    margin-top: 5%;;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #398AB9;
+    /* background-image: url(../../assets/signup.svg); */
+  }
+  
+  .heading{
+    color: #533E85;
+    font-size: 24px;
+    line-height: 10px;
+    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .container{
+    width:100%;
+    padding-top:2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #398AB9;
+  }
+  
+  form{
+    width: 100%;
+  }
+  form label{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #151D3B;
+  }
+  
+  .name{
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+  }
+  form input{
+    width: 100%;
+    min-height: 25px;
+    border: 2px solid black;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    font-family: "Arimo";
+    margin-top: 5px;
+    color: rebeccapurple;
+    border-radius: 4px;
+  }
+  
+  .name div{
+    width: 100%;
+    padding: 2%;
+  }
+  
+  .adress-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+  }
+  
+  .address-info .locate{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .cc-info{
+    display: flex;
+    justify-content: space-between;
+  }
+  .cc-info div{
+    width: 100%;
+    padding: 2%;
+  }
+  
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .btns button{
+        margin: 3px 0;
+        height: 30px;
+        width: 100px;
+        color: #cfc9e1;
+        background-color: #4a3b76;
+        text-transform: uppercase;
+        border: 0;
+        border-radius: .3rem;
+        letter-spacing: 2px;
+  }
+  
+  .file {
+   text-align: center;
+  }
+  .file input {
+    width: 50%;
+    margin: auto;
+  }
+  
+  @media screen and (max-width:600px){
+    .name{
+        display: block;
+    }
+    .cc-info{
+        display: block;
+    }
+    .cc-info div{
+        width: 100%;
+    }
+    .adress-info .child{
+        width: 100%;
+        padding: 2%;
+        margin: 2%;
+    }
+    .container{
+        width:100%;
+        padding: 0% 0%;
+        border: 2px solid red;
+    }
+    form{
+        width: 100%;
+    }
+    .address-info .locate{
+        display: block;
+    }
+    .file input {
+        width: 100%;
+    }
+    
+  }

@@ -1,0 +1,40 @@
+<div class="row g-0 mt-5">
+
+  <div class="col-md-6">
+
+    <img src="../../assets/svg/undraw_account_re_o7id.svg" class="w-100">
+
+  </div>
+
+  <div class="col-md-5">
+
+    <form #formref (ngSubmit)="restore()" class="w-100 mx-auto p-3 m-3 shadow" [formGroup]="userRestore">
+
+      <h1 class="text-center">User Account Restore</h1>
+
+      <label for="usernameoremail">Username/Email</label>
+
+      <input type="text" name="usernameoremail" class="form-control" formControlName="usernameoremail">
+
+      <div *ngIf="(usernameoremail.invalid && usernameoremail.touched)" class="text-danger">
+
+        <p *ngIf="usernameoremail.errors?.['required']">*This is required</p>
+
+      </div>
+      <label for="password">Password</label>
+
+      <input type="password" name="password" class="form-control" formControlName="password">
+
+      <div *ngIf="(password.invalid && password.touched)" class="text-danger">
+
+        <p *ngIf="password.errors?.['required']">*This is required</p>
+
+      </div>
+
+      <button class="btn btn-primary d-block mt-4 mx-auto" type="submit">Restore</button>
+
+    </form>
+
+  <!-- </div> -->
+
+</div>

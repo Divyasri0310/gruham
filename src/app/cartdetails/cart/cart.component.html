@@ -1,0 +1,79 @@
+<!-- <div class="card bg-dark" *ngIf="date!=='null'">
+  <h1 class="text-center text-light">You have an appointment {{date}}</h1>
+  <button class="btn btn-primary w-50" (click)="cancel()">Cancel Appointment</button>
+</div> -->
+
+<ng-template #slottemplate>
+  <div class="modal-body text-success fw-bold text-center bg-light">
+      <div *ngFor="let v of userarray" >
+        <h3>your appointment with {{v.ownername}} is scheduled on {{v.date}} <button class="btn btn-danger" (click)="cancelmyslot(v)">x</button> </h3>
+        <hr>
+      </div>
+      
+      <div *ngFor="let v of ownerarray">
+        <h3>{{v.username}} has requested for appointment on {{v.date}}<button class="btn btn-danger" (click)="cancelmyslot(v)">x</button> </h3>
+        <hr>
+      </div>
+      <h1 *ngIf="(userarray.length==0)&&(ownerarray.length==0)">You have no appoinments</h1>
+      <button class="btn btn-success" (click)="ok()">ok</button>
+  </div>
+</ng-template>
+
+
+<button class="btn btn-primary" (click)="slotModal(slottemplate)">my appointments</button>
+
+
+
+<div class="container" style="margin-top:50px;">
+  <div class="noapp" *ngIf="mycart.length==0">
+    <h1 class="noapp"> NO APPARTMENTS ADDED</h1>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2">
+    <div class="mb-3" id="hovering" *ngFor="let v of mycart;let ind=index">
+   
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-5 card-image">
+            <img src={{v.buildingPic}} alt="" class="img-fluid w-100 h-100">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h1 id="owner">Owner: {{v.OwnerName}}</h1>
+              <p>Email: {{v.email}}</p>
+              <p>Phone No: {{v.phoneNo}}</p>
+              <p>City: {{v.city}}</p>
+              <p>Area: {{v.Area}}</p>
+              <p>street: {{v.street}}</p>
+              <p>Pincode: {{v.pincode}}</p>
+              <p>bhkType: {{v.bhkType}}</p>
+              <h1 style="font-weight: bold;">Rent: &#x20B9;{{v.rent}}</h1>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex">
+          <a class="card-button w-50" (click)="delete(ind)">Remove <i style="vertical-align: middle;" class="bi bi-x-circle-fill"></i></a>
+          <a class="card-button w-50" id="appointmentbtn" (click)="openModal(template,v)">Book an appointment <i style="vertical-align: middle;" class="bi bi-calendar-check-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- modal -->
+  <ng-template #template>
+    <div class="modalcol">
+      <div class="row">
+        <div class="col-6">
+          <img src="../../assets/svg/undraw_booking_re_gw4j.svg">
+        </div>
+        <div class="col-4">
+          <h3>Book an appointment<input type="date" min="{{today}}" #ref> </h3>
+          <button (click)="book(ref.value)" class="btn mx-auto">Book</button>
+          <ng-template #ref>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+

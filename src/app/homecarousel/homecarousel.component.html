@@ -1,0 +1,15 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor="let v of propertydetails">
+    <div id="hovering">
+      <div class="card w-100 h-100">
+        <figure><img [src]="v.buildingPic" alt=""></figure>
+        <div class="card-body">
+          <p>City: {{v.city}}, Area: {{v.Area}}</p>
+          <p>Street: {{v.street}},pincode: {{v.pincode}}</p>
+          <p>BHKType: {{v.bhkType}}</p>
+          <h1>Rent: &#x20B9;{{v.rent}}</h1>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</owl-carousel-o>

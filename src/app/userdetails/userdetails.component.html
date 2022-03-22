@@ -1,0 +1,151 @@
+<div class="container">
+    <div class="card1">
+        <div class="row">
+            <div class="col1">
+                <img class="image" [src]="userData?.profilePic">
+            </div>
+            <div class="col2">
+                <h1>{{userData?.username|uppercase}}<span><i class="bi bi-pencil-square"></i></span></h1>
+                <h3><span><i class="bi bi-envelope-check"></i>EMAIL:</span> {{userData?.email}}</h3>
+                <h3><span><i class="bi bi-telephone-fill">Mobile:</i></span> {{userData?.phoneNo}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #template>
+    <div class="modalcol">
+    <form #formref="ngForm" (ngSubmit)="check()" class="p-5 mt-5 shadow"
+        [formGroup]="userPersonalData">
+        <h1 class="text-center">Update profile</h1>
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control d-block mx-auto w-100" formControlName="email">
+        <div *ngIf="(email.invalid && email.touched)" class="text-danger">
+            <p *ngIf="email.errors?.['required']">*This is required</p>
+        </div>
+        <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p class="w-100" *ngIf="(registrationError.errorMessage =='email not matched')">{{registrationError.errorMessage}}</p>
+          </div>
+        <label for="password">Password</label>
+        <input type="password" name="password" class="form-control d-block mx-auto w-100" formControlName="password">
+        <div *ngIf="(password.invalid && password.touched)" class="text-danger">
+            <p *ngIf="password.errors?.['required']">*This is required</p>
+        </div>
+        <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p class="w-100" *ngIf="(registrationError.errorMessage =='password not matched')">{{registrationError.errorMessage}}</p>
+          </div>
+        <label for="phoneNo">Phoneno</label>
+        <input type="number" name="phoneNo" class="form-control d-block mx-auto w-100" formControlName="phoneNo">
+        <div *ngIf="(phoneNo.invalid && phoneNo.touched)" class="text-danger">
+            <p *ngIf="phoneNo.errors?.['required']">*This is required</p>
+        </div>
+        <label for="username">Username</label>
+        <input type="text" name="username" class="form-control d-block mx-auto w-100" formControlName="username">
+        <div *ngIf="(username.invalid && username.touched)" class="text-danger">
+            <p *ngIf="username.errors?.['required']">*This is required</p>
+        </div>
+        <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p class="w-100" *ngIf="(registrationError.errorMessage !=='password not matched')&&(registrationError.errorMessage !=='email not matched')">{{registrationError.errorMessage}}</p>
+          </div>
+        <button class="btn btn-dark d-block mt-4 mx-auto" type="submit">update</button>
+    </form>
+    </div>
+</ng-template>
+
+<!-- password modal -->
+<ng-template #passwordTemplate>
+    <div class="modalcol">
+        <form #formref (ngSubmit)="change()" class="p-5 mt-5 shadow" [formGroup]="passwordChange">
+            <h1 class="text-center">Password change</h1>
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control d-block mx-auto w-100" formControlName="username">
+            <div *ngIf="(userName.invalid && userName.touched)" class="text-danger">
+              <p *ngIf="userName.errors?.['required']">*This is required</p>
+            </div>
+            <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+                <p class="w-100" *ngIf="(registrationError.errorMessage =='username is invalid')">{{registrationError.errorMessage}}</p>
+              </div>
+            <label for="oldpassword">Old password</label>
+            <input type="password" name="oldpassword" class="form-control d-block mx-auto w-100" formControlName="oldpassword">
+            <div *ngIf="(oldpassword.invalid && oldpassword.touched)" class="text-danger">
+              <p *ngIf="oldpassword.errors?.['required']">*This is required</p>
+            </div>
+            <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+                <p class="w-100" *ngIf="(registrationError.errorMessage =='oldpassword is invalid')">{{registrationError.errorMessage}}</p>
+              </div>
+            <label for="newpassword">New password</label>
+            <input type="password" name="newpassword" class="form-control d-block mx-auto w-100" formControlName="newpassword">
+            <div *ngIf="(newpassword.invalid && newpassword.touched)" class="text-danger">
+              <p *ngIf="newpassword.errors?.['required']">*This is required</p>
+            </div>
+            <label for="newpasswordmatch">Re-type New password</label>
+            <input type="password" name="newpasswordmatch" class="form-control d-block mx-auto w-100" formControlName="newpasswordmatch">
+            <div *ngIf="(newpasswordmatch.invalid && newpasswordmatch.touched)" class="text-danger">
+              <p *ngIf="newpasswordmatch.errors?.['required']">*This is required</p>
+            </div>
+            <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+                <p class="w-100" *ngIf="(registrationError.errorMessage !=='username is invalid')&&(registrationError.errorMessage !=='oldpassword is invalid')">{{registrationError.errorMessage}}</p>
+              </div>
+            <button class="btn btn-success d-block mt-4 mx-auto" type="submit">Change</button>
+          </form>
+    </div>
+</ng-template>
+
+<!-- user delete modal -->
+<ng-template #deleteTemplate>
+    <div class="modalcol">
+        <form #formref (ngSubmit)="delete()" class="p-5 mt-5 shadow" [formGroup]="deleteuser">
+            <h1 class="text-center">User Account Delete</h1>
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control d-block mx-auto w-100" formControlName="password">
+            <div *ngIf="(delpassword.invalid && delpassword.touched)" class="text-danger">
+              <p *ngIf="delpassword.errors?.['required']">*This is required</p>
+            </div>
+            <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+                <p class="w-100">{{registrationError.errorMessage}}</p>
+              </div>
+            <button class="btn btn-success d-block mt-4 mx-auto" type="submit">Delete</button>
+          </form>
+    </div>
+</ng-template>
+
+
+<div class="container mt-5 text-center">
+    <div class="row row1 row-cols-md-2 row-cols-lg-2 row-cols-1">
+        <div class="col mt-3 hh" (click)="openModal(template)">
+            <div class="card ">
+                <div class="card-body">
+                    <h1><i class="bi bi-emoji-sunglasses"></i></h1>
+                    <h1>ChangeProfile<i class="bi bi-chevron-right"></i></h1>
+                    <h4>change your personal details</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-3 hh" (click)="openpasswordModal(passwordTemplate)">
+            <div class="card">
+                <div class="card-body">
+                    <h1><i class="bi bi-person-plus-fill"></i></h1>
+                    <h1>Change Password<i class="bi bi-chevron-right"></i></h1>
+                    <h4>want to change your password</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-3 hh" (click)="deleteaccountModal(deleteTemplate)">
+            <div class="card">
+                <div class="card-body">
+                    <h1><i class="bi bi-trash-fill"></i></h1>
+                    <h1>Delete Account<i class="bi bi-chevron-right"></i></h1>
+                    <h4>want to remove Account..</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-3 mb-3 hh" (click)="navigatetocontactus()">
+            <div class="card">
+                <div class="card-body">
+                    <h1><i class="bi bi-patch-question"></i></h1>
+                    <h1>Reach to Us <i class="bi bi-chevron-right"></i></h1>
+                    <h4>Any thing to ask??</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

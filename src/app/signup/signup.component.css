@@ -1,0 +1,100 @@
+input {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #4c4c4c;
+}
+
+p {
+  font-size: 12px;
+  width: 150px;
+  display: inline-block;
+  margin-left: 18px;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #4c4c4c;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+html{
+  background-color: #ffffff;
+}
+
+.container{
+    /* background-image: url(../../assets/2.jpeg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.testbox {
+  margin: 20px auto;
+  width: 500px; 
+  border-radius: 8px; 
+  /* background-color: #c25e5e;  */
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  border: solid 1px #cbc9c9;
+  padding: 5%;
+  /* background-image: url(../../assets/1.jpeg); */
+  background-color: rgb(96, 149, 247);
+}
+
+form{
+  margin: 0 30px;
+}
+
+input[type=text],input[type=password],input[type=tel],input[type=email],input[type=file]{
+  width: 90%; 
+  height: 40px; 
+  margin-left: 3px;
+  border-radius: 0px 4px 4px 0px;
+  background-color: #fff; 
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 1px #cbc9c9;
+  margin-left: -5px;
+  margin-top: 13px; 
+  padding-left: 10px;
+}
+input[type=file]{
+    width: 100%;
+}
+#icon i{
+  background-color: #3a57af;
+  padding: 8px 0px 8px 15px;
+  width: 10%; 
+  border-radius: 4px 0px 0px 4px; 
+  color: white; 
+  border: solid 0px #cbc9c9;
+}
+
+
+button {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 6px 25px 0px 20px;
+  margin: 10px 8px 20px 0px;
+     width: 100px;
+   height: 30px; 
+  border-radius: 5px;  
+  background-color: #13083b; 
+  box-shadow: 0 3px rgba(58,87,175,.75); 
+  transition: all 0.1s linear 0s; 
+  top: 0px;
+  position: relative;
+}
+
+button:hover {
+  top: 3px;
+  /* background-color:#2e458b;  */
+  box-shadow: none;
+  color: white;
+  
+}
+
+@media screen and (max-width:600px){
+    .testbox{
+        width: 100%;
+    }
+}

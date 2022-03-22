@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="testbox ">
+    <h1 class="text-dark">User Registration</h1>
+  
+    <form #formref (ngSubmit)="submit()" [formGroup]="userRegistration">
+    
+      <div>
+          <label id="icon" for="name"><i class="bi bi-person-fill"></i></label>
+          <input type="text" name="name" id="name" placeholder="Name*" formControlName="username" required/>
+          <div *ngIf="(username.invalid && username.touched)" class="text-danger">
+            <p *ngIf="username.errors?.['required']">*This is required</p>
+          </div>
+          <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p *ngIf="registrationError.errorMessage =='username is already existed' ">{{registrationError.errorMessage}}</p>
+          </div>
+      </div>
+      
+      <div>
+          <label id="icon" for="password"><i class="bi bi-shield-lock"></i></label>
+          <input type="password" name="password" id="password" placeholder="Password*" formControlName="password" required/>
+          <div *ngIf="(password.invalid && password.touched)" class="text-danger">
+            <p *ngIf="password.errors?.['required']">*This is required</p>
+          </div>
+      </div>
+  
+      <div>
+          <label id="icon" for="email"><i class="bi bi-envelope-check-fill"></i></label>
+          <input type="email" name="email" id="email" placeholder="Email*" formControlName="email" required/>
+          <div *ngIf="(email.invalid && email.touched)" class="text-danger">
+            <p *ngIf="email.errors?.['required']">*This is required</p>
+          </div>
+          <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p class="w-100" *ngIf="registrationError.errorMessage =='email already existed..plz try with different email' ">{{registrationError.errorMessage}}</p>
+          </div>
+      </div>
+  
+      <div>
+          <label id="icon" for="mobile"><i class="bi bi-phone-vibrate"></i></label>
+          <input type="tel" name="mobile" id="mobile" placeholder="Mobile*" formControlName="phoneNo" required/>
+          <div *ngIf="(phoneNo.invalid && phoneNo.touched)" class="text-danger">
+            <p *ngIf="phoneNo.errors?.['required']">*This is required</p>
+          </div>
+      </div>
+   
+      <div class="mt-2">
+         
+         <input type="file" class="form-control"  name="photo" id="photo" placeholder="UploadProfile*" #profile (input)="onFileSelect(profile.files[0])">
+      </div>
+  
+      <button class="button btn"  type="submit">Register</button>
+    </form>
+  </div>
+</div>

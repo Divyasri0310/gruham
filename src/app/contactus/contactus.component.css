@@ -1,0 +1,218 @@
+.one {
+  /* background-image: url("https://st2.depositphotos.com/1265075/7446/i/600/depositphotos_74468913-stock-photo-contact-us-icons-on-cubes.jpg"); */
+  /* background-image: url("https://media.istockphoto.com/photos/-picture-id1311934969?b=1&k=20&m=1311934969&s=170667a&w=0&h=UQ3F8CE5zam5mT5swIliZ9nO7dhX4ZzsALMufFdv6Ys="); */
+  /* background-image: url("/src/assets/background.jpg"); */
+  /* background-image: linear-gradient(to left, #5d8bf4, skyblue); */
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.have {
+  color: rgb(29, 28, 28);
+  font-weight: bold;
+  padding-top: 5%;
+}
+
+.get {
+  color: rgb(163, 23, 23);
+  margin-left: 50%;
+}
+
+#loc {
+  color: rgba(31, 104, 241, 0.952);
+  font-weight: bold;
+}
+
+#lorem {
+  color: rgb(68, 86, 245);
+}
+
+#hyd {
+  color: rgb(42, 63, 245);
+  font-weight: 600;
+}
+
+.number {
+  color: rgb(236, 234, 234);
+  font-size: 20px;
+}
+
+#asr {
+  color: rgb(84, 222, 240);
+  font-weight: 500;
+}
+
+#kphb {
+  color: rgb(84, 222, 240);
+  font-weight: 500;
+}
+
+#officeform {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+#office {
+  font-family: cursive;
+}
+
+#conform {
+  padding: 5%;
+}
+
+#cus {
+  font-weight: bolder;
+  color: rgb(243, 6, 6);
+}
+
+.reachout {
+  font-weight: 700;
+  color: rgb(15, 15, 14);
+}
+
+.mail {
+  color: rgb(252, 252, 252);
+}
+
+#mailus>p:hover{
+  font-weight: bold;
+  color: #007BBF;
+}
+ul{
+  text-decoration: none;
+}
+.form {
+  background-color: rgba(14, 86, 241, 0.4);
+  border-radius: 8%;
+
+}
+
+
+
+.button-blue {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  width: 50%;
+  display: block;
+  margin: auto;
+  border: #fbfbfb solid 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: -4px;
+  background-color: rgb(49, 80, 219);
+}
+
+.button-blue:hover {
+  background-color: rgb(141, 235, 33);
+  color: #050500;
+}
+
+.submit {
+  padding-bottom: 5%;
+}
+
+.contactform .submit:hover {
+  color: #172df5;
+}
+
+@media only screen and (max-width: 580px) {
+  .one > .heading > .get {
+    padding-bottom: 10%;
+  }
+  .one > .heading > .have {
+    padding-top: 5%;
+  }
+  #contact-input #office {
+    left: 3%;
+    margin-right: 3%;
+    width: auto;
+    margin-left: 0;
+    padding-right: 3%;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .one {
+    padding: 17%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .one > .heading > .get {
+    padding-bottom: 10%;
+  }
+  .one > .heading > .have {
+    padding-top: 5%;
+  }
+  #conform {
+    width: auto;
+  }
+  #office {
+    width: auto;
+    padding: 10%;
+  }
+}
+
+.card {
+  margin-bottom: 1rem;
+  border: 0rem;
+  padding: 10px;
+  justify-content: space-around;
+  /* background-image: linear-gradient(to left, #ffffff48, rgba(255, 255, 255, 0.459)) */
+}
+
+.why {
+  background-image: linear-gradient(rgb(253, 253, 177), #7bdef0);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 250ms;
+  background-position-x: right;
+}
+
+.why:hover {
+  background-size: 100% 100%;
+  background-position-x: left;
+}
+
+.jumbotron > h1{
+  font-weight: bolder;
+  color: rgb(5, 5, 83);
+  font-size: 50px;
+  font-stretch: semi-expanded;
+}
+
+.lead{
+  font-style: oblique;
+  color: #022129;
+  font-weight: bold;
+}
+
+figure:hover img{
+  width: 300px;
+}
+
+.paragraph{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.title{
+  font-weight: bold;
+}
+
+.paragraph{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+}
+
+
+#whygruham{
+  font-weight: bold;
+  padding-bottom: 2%;
+}
+
+.card-body, .card-title, .card-subtitle{
+  font-weight: bold;
+  color: black;
+}

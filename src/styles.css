@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+/* @import '~ngx-owl-carousel-o/lib/styles/css/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/css/owl.theme.default'; */
+/* html, body { height: 100%; } */
+html{
+  position: relative;
+  min-height: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(to left, #5d8bf4, skyblue);
+}    
+
+

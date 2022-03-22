@@ -1,0 +1,227 @@
+<div class="container-fluid">
+  <div class="bg-image text-center mb-5 text-white" style="width: 100%;">
+    <div class="jumbotron jumbortron-fluid">
+      <h1>Welcome to Gruham</h1>
+      <p class="lead" id="find">
+        Find your way to home in no-time
+      </p>
+    </div>
+    <!-- <div class="input-group rounded">
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </div> -->
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2 class="title">Explore properties</h2>
+        <p class="paragraph" style="font-style: italic;">
+          You can now choose from our various options available across
+          furnished, semi furnished and share houses.
+          Explore from Apartments, land, builder floors, villas and more..
+        </p>
+
+        <ul class="list-unstyled" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+          <li><button class="btn furniture">Furnished</button></li>
+          <br />
+          <li><button class="btn furniture">Semi furnished</button></li>
+          <br />
+          <li><button class="btn furniture">Shared houses</button></li>
+        </ul>
+      </div>
+
+      <div class="col-md-8">
+        <owl-carousel-o [options]="customOptions">
+          <!-- <ng-template carouselSlide *ngFor="   ">  </ng-template>  -->
+          <ng-template carouselSlide class="carouselslide">
+            <h1>STUDIO</h1>
+            <figure><img
+              src="https://www.rentmystay.com/resource/home/assets/images/room1.png"
+              alt=""
+              class="img-fluid"
+            /></figure>
+            <p class="rm-info">
+              <a href=""> BTM Layout</a>
+              <span></span> |
+              <a href="">Hoodi</a>
+              <span></span> |
+              <a href="">HSR Layout</a>
+              <span></span> |
+              <a href="">Nagar</a>
+              <span></span> |
+              <a href="">Kasavanahalli</a>
+              <span></span> |
+              <a href="">Koramangala</a>
+              <span></span> |
+              <a href="">Kudlu gate</a>
+              <span></span> |
+              <a href="">Kundanahalli</a>
+            </p>
+          </ng-template>
+          <ng-template carouselSlide>
+            <h1>1 BHK</h1>
+            <figure><img
+              src="https://www.rentmystay.com/resource/home/assets/images/room2.png"
+              alt=""
+              class="img-fluid"
+            /></figure>
+            <p class="rm-info">
+              <a href="">BTM Layout</a>
+              <span></span> |
+              <a href="">Hoodi</a>
+              <span></span> |
+              <a href="">HSR Layout</a>
+              <span></span> |
+              <a href="">Nagar</a>
+              <span></span> |
+              <a href="">Kasavanahalli</a>
+              <span></span> |
+              <a href="">Koramangala</a>
+              <span></span> |
+              <a href="">Kudlu gate</a>
+            </p>
+          </ng-template>
+          <ng-template carouselSlide>
+            <h1>2 BHK</h1>
+            <figure><img
+              src="https://www.rentmystay.com/resource/home/assets/images/room3.png"
+              alt=""
+              class="img-fluid"
+            /></figure>
+            <p class="rm-info">
+              <a href="">BTM Layout</a>
+              <span></span> |
+              <a href="">Hoodi</a>
+              <span></span> |
+              <a href="">HSR Layout</a>
+              <span></span> |
+              <a href="">Nagar</a>
+              <span></span> |
+              <a href="">Kasavanahalli</a>
+              <span></span> |
+              <a href="">Koramangala</a>
+              <span></span> |
+              <a href="">Kudlu gate</a>
+              <span></span> |
+              <a href="">e ;">Kundanahalli</a>
+              <span></span> |
+              <a href="">Marathahalli</a>
+              <span></span> |
+            </p>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+    <div class="container" style="padding: 20px">
+      <h1 class="display-1">Recently added</h1>
+
+      <app-homecarousel></app-homecarousel>
+
+      <button id="showallbtn"
+        class="btn d-block m-auto shadow-none"
+        (click)="navigatetoallcard()"
+      >
+        show all
+      </button>
+    </div>
+
+    <div class="container shadow why py-4 mt-3">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="bs-heading">
+            <h2 class="title">Why GRUHAM?</h2>
+          </div>
+          <div class="bs-why-rent">
+            <ul>
+              <li id="whygruham">
+                Fully furnished and ideal for long term and short term
+                <span class="new-line"></span> rentals. Alt to Service
+                Apartments and hotels.
+              </li>
+              <li id="whygruham">largest network of curated rental houses</li>
+              <li id="whygruham">Rent for Any Duration</li>
+              <li id="whygruham">Zero Brokerage Charges</li>
+              <li id="whygruham">Families, Couples, Friends, Singles Welcome!</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="wow fadeInUp">
+            <picture>
+              <source
+                media="(min-width: 650px)"
+                srcset="
+                  https://www.rentmystay.com/resource/home/assets/images/mob-booknew.png
+                "
+              />
+              <img
+                class="img-fluid"
+                alt="book-on-mobile"
+                data-pagespeed-url-hash="3281832354"
+                src="https://www.rentmystay.com/resource/home/assets/images/Vectornew.png"
+                onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="container d-flex shadow mb-5" style="margin-top: 2rem">
+      <h1 class="mt-5" style="padding-right: 2%;">Featured Developers</h1>
+      <div class="row" style="padding-top: 3%;">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card border-secondary text-secondary">
+            <div class="card-body">
+              <h4 class="card-title">DS Max Sahara</h4>
+              <h6 class="card-subtitle mb-2">Hyderabad</h6>
+              <p class="card-text">
+                Max Builders (DS-MAX Properties Pvt. Ltd) is an award-winning Real Estate development firm, based in Hyderabad  
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card border-secondary text-secondary">
+            <div class="card-body">
+              <h4 class="card-title">Pristine Homes</h4>
+              <h6 class="card-subtitle mb-2">Hyderabad</h6>
+              <p class="card-text">
+                Pristine Homes connotes purity like purity of thought, purity of action and purity of ideas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card border-secondary text-secondary">
+            <div class="card-body">
+              <h4 class="card-title">Salarpuria Sattva</h4>
+              <h6 class="card-subtitle mb-2">Hyderabad</h6>
+              <p class="card-text">
+                Salarpuria Sattva is one of the promising builders in the field of Real Estate as well as furnished homes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+
+    <!-- <div class="alert alert-dark alert-dismissible fade show fixed-bottom" role="alert">
+<strong>Hey there!</strong>100% Sanitized houses
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+</button>
+</div> -->
+  </div>
+
+  
+</div>

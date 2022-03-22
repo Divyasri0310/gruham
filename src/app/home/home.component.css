@@ -1,0 +1,158 @@
+.furniture:hover {
+  color: wheat;
+  background-color: orange;
+}
+.rm-info > a {
+  font-size: 10px;
+}
+
+.col-md-4 > img {
+  transition: all 0.3 ease;
+}
+
+.col-md-4 > img:hover {
+  box-shadow: 0 0 10px 1px #dbdbdb;
+}
+
+.bg-image {
+  background-image: url("https://studyworkgrow.com.au/wp-content/uploads/2020/03/Real-estate-JS.jpg");
+  background-attachment: fixed;
+  padding: 5%;
+}
+
+image {
+  background-image: url("https://media.istockphoto.com/vectors/happy-family-couple-with-kids-and-pet-standing-together-vector-id1222835110?b=1&k=20&m=1222835110&s=170667a&w=0&h=KstBdkj35MtL0injyv1Pqktwohtxq1bko2_JiHsGkcI=");
+  height: 350px;
+  background-repeat: no-repeat;
+}
+image > body {
+  padding: 20rem 0rem;
+  overflow-x: hidden;
+}
+.box {
+  padding: 5rem 35rem;
+}
+.container-fluid {
+  background-image: linear-gradient(to left, #5d8bf4, skyblue);
+}
+.card {
+  margin-bottom: 1rem;
+  border: 0rem;
+  padding: 10px;
+  justify-content: space-around;
+  /* background-image: linear-gradient(to left, #ffffff48, rgba(255, 255, 255, 0.459)) */
+}
+.card-footer {
+  border: 0rem;
+  border-top: 1rem;
+}
+.avatar {
+  border: 0.3rem solid rgba(#fff, 0.3);
+  margin-top: -6rem;
+  margin-bottom: 1rem;
+  max-width: 9rem;
+}
+.jumbotron {
+  background-position: auto;
+  padding: 5rem;
+  background-repeat: no-repeat;
+}
+.image2 {
+  background-image: url("http://clipart-library.com/newhp/288-2881081_real-estate-agent-clipart.png");
+  /* background-attachment: fixed; */
+  height: 350px;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+.box2 {
+  padding: 4rem 3rem;
+}
+.card1 {
+  border: 2rem;
+}
+
+.why {
+  background-image: linear-gradient(rgb(253, 253, 177), #7bdef0);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 250ms;
+  background-position-x: right;
+}
+
+.why:hover {
+  background-size: 100% 100%;
+  background-position-x: left;
+}
+
+.jumbotron > h1{
+  font-weight: bolder;
+  color: rgb(5, 5, 83);
+  font-size: 50px;
+  font-stretch: semi-expanded;
+}
+
+.lead{
+  font-style: oblique;
+  color: #022129;
+  font-weight: bold;
+}
+
+figure:hover img{
+  width: 300px;
+}
+
+.paragraph{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.title{
+  font-weight: bold;
+}
+
+.paragraph{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+}
+
+a{
+  color: black;
+  font-weight: 800;
+}
+
+
+#showallbtn{
+  background-color: black;
+  color: whitesmoke;
+}
+
+#whygruham{
+  font-weight: bold;
+  padding-bottom: 2%;
+}
+
+.card-body, .card-title, .card-subtitle{
+  font-weight: bold;
+  color: black;
+}
+
+@media screen and (max-width:500px){
+
+  .jumbotron > h1{
+
+    font-weight: bolder;
+
+    color: rgb(5, 5, 83);
+
+    font-size: 30px;
+
+    font-stretch: semi-expanded;
+
+  }
+
+  #find{
+    display: none;
+    font-size: 20px;
+
+  }
+
+}

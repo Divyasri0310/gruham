@@ -1,0 +1,62 @@
+<section class="my-5">
+  <div class="container m-auto">
+    <div class="row g-0">
+
+      <div class="col-lg-5">
+        <a href=""> <img src="../../assets/svg/undraw_authentication_re_svpt.svg" class="img-fluid"
+            alt=""></a>
+      </div>
+
+      <div class="col-lg-7  d-block m-auto">
+        <h1 class="text-center">Gruham</h1>
+        <form #formref="ngForm" class="form" [formGroup]="userLogin" (submit)="login()">
+          <mat-form-field appearance="standard" class=" d-block m-auto w-50 mb-2">
+            <mat-label>Enter your username/email</mat-label>
+            <input matInput formControlName="usernameoremail" required autocomplete="false">
+            <mat-error
+              *ngIf="userLogin.controls['usernameoremail'].touched && userLogin.controls['usernameoremail'].invalid">
+              invalid email</mat-error>
+          </mat-form-field>
+          <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p *ngIf="registrationError.errorMessage =='username or email invalid signup to create new account' ">{{registrationError.errorMessage}}</p>
+          </div>
+
+
+          <mat-form-field class="full-width d-block m-auto w-50">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+
+
+            <mat-error
+              *ngIf="(formref.submitted || userLogin.controls['password'].touched) && (userLogin.controls['password'].errors?.['required'])">
+              password is required</mat-error>
+            <mat-error *ngIf="(formref.submitted && userLogin.controls['password'].errors?.['minlength'])">password must
+              have more than 6</mat-error>
+            <mat-error *ngIf="formref.submitted && userLogin.controls['password'].errors?.['pattern']">must conatin
+              UpperCase,Special Character</mat-error>
+          </mat-form-field>
+
+          <div class="fw-bold text-center text-danger" *ngIf="registrationError.error">
+            <p *ngIf="registrationError.errorMessage !=='username or email invalid signup to create new account' ">{{registrationError.errorMessage}}</p>
+          </div>
+
+          <button type="submit" class="btn d-block m-auto my-3 shadow-none button-29">Log in<i
+              style="vertical-align: middle;" class="bi bi-box-arrow-in-right"></i></button>
+        </form>
+        <p class="text-center mb-3">New to this Page?<a class="text-decoration-none signup" id="point"
+            (click)="navigatetosignup()">Sign up</a></p>
+
+        <p class="text-center mb-3"><a class="text-decoration-none signup" id="point"
+            (click)="navigatetoforgot()">Forgot password</a></p><br>
+        <p class="text-center mb-3"><a class="text-decoration-none signup" id="point"
+            (click)="navigatetorestore()">Restore account</a></p>
+      </div>
+    </div>
+  </div>
+
+
+</section>

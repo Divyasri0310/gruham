@@ -1,0 +1,21 @@
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 20px;
+  margin-top: 0;
+}
+
+.content{
+  margin-bottom: 1rem;
+}
+
+.content .main{
+  margin-bottom: 5rem;
+}
+
+body{
+  background-color: #151521;
+}

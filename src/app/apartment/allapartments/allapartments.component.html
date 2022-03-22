@@ -1,0 +1,61 @@
+
+<div class="mx-auto mt-4 d-block" >
+    <h1 class="text-center"><b>Search by area</b></h1>
+</div>
+  <!-- <select name="" class="form-select mx-auto w-50" (change)="selectArea($event)">
+    <option value="all" active>All</option>
+    <option [value]="v.Area" *ngFor="let v of propertydetails">{{v.Area}}</option>
+  </select> -->
+  
+  <div class="input-group w-50 mx-auto rounded">
+    <input
+      type="search"
+      class="form-control rounded"
+      placeholder="Search"
+      aria-label="Search"
+      aria-describedby="search-addon"
+      (change)="selectArea($event)"
+    />
+    <span class="input-group-text border-0" id="search-addon">
+      <i class="fas fa-search"></i>
+    </span>
+    <button class="btn-primary ms-2" (click)="alldata()">All</button>
+  </div>
+  
+  
+  <div class="container" style="margin-top:50px;">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+      <div class="mb-3" id="hovering" *ngFor="let v of iterateData">
+      <div class="card h-100">
+      <!-- <div class="row">
+      <div class="col-3"> -->
+      <div class="card-image">
+      <!-- <img src={{v.buildingPic}} alt="" height="340px" width="280px"> -->
+      <img src={{v.buildingPic}} alt="" class="img-fluid w-100" style="height: 250px;">
+      <!-- </div> -->
+      </div>
+      
+      
+      
+      <!-- <div class="col-6" id="propertydata"> -->
+      <div class="card-heading">
+      <a class="card-action" href="#" style="float: right;">
+      <fa-icon [icon]="faHearticon"></fa-icon>
+      </a>
+      <!-- <h1 id="owner">Owner: {{v.OwnerName}}</h1> -->
+      <!-- <p>Email: {{v.email}}</p> -->
+      <!-- <p>Phone No: {{v.phoneNo}}</p> -->
+      <p>City: {{v.city}}</p>
+      <p>Area: {{v.Area}}</p>
+      <p>street: {{v.street}}</p>
+      <p>Pincode: {{v.pincode}}</p>
+      <p>bhkType: {{v.bhkType}}</p>
+      <h1 style="font-weight: bold;">Rent: &#x20B9;{{v.rent}}</h1>
+      </div>
+      <!-- </div> -->
+      <a class="card-button" (click)="add(v)"> Add to Cart <i class="bi bi-bag-plus-fill"> </i> </a>
+      </div>
+      <!-- </div> -->
+      </div>
+      </div>
+  </div>

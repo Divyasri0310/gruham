@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="container-fluid">
+    <img class="logo" src="../../assets/logo.png" alt="">
+  <!-- <a class="navbar-brand" href="#" >GRUHAM</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-bs-target="#navbarContent" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="navbarContent" >
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item hh active">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" ><mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">home</mat-icon>Home</a>
+      </li>
+      <li class="nav-item hh">
+        <a class="nav-link" routerLink="/aboutus" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active" ><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square-fill" viewBox="0 0 16 16">
+          <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg> About us</a>
+      </li>
+      <li class="nav-item hh">
+        <a class="nav-link" routerLink="/contactus" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active" >
+          <mat-icon class="icon"> contacts</mat-icon>
+          Contact us</a>
+      </li>
+      <li class="nav-item hh"  *ngIf="obj.getbhSubject().getValue()==null">
+        <a class="nav-link" routerLink="/login" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active" >
+          <mat-icon class="icon"> account_circle</mat-icon>
+          Login/Signup</a>
+      </li>
+      <li class="nav-item hh" *ngIf="obj.getbhSubject().getValue()!==null">
+        <a class="nav-link" routerLink="/apartment/allapartments" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active" ><mat-icon class="icon"> location_city</mat-icon>All adds</a>
+      </li>
+
+      <ul id="withoutdrp" *ngIf="obj.getbhSubject().getValue()!==null">
+
+        <li class="nav-link" routerLink="/userdetails" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon"> person_pin</mat-icon> User Profile</li>
+
+            <li class="nav-link" routerLink="/apartment/addapartment" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon"> add_location</mat-icon> Add property</li>
+
+            <li class="nav-link" routerLink="/apartment/myapartments" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon">location_city</mat-icon> My adds</li>
+
+            <li class="nav-link" routerLink="/cartdetails/cart" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon"> turned_in_not</mat-icon>My cart</li>
+
+            <li class="nav-link ms-1" routerLink="/login" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active" style="z-index: 9999; overflow: visible;" (click)="userlogout()"><fa-icon [icon]="faRightFromBracketicon"></fa-icon> Logout</li>
+
+      </ul>
+
+      <li class="nav-item hh">
+        <div class="dropdown" *ngIf="obj.getbhSubject().getValue()!==null">
+          <div><img class="profilepic" [src]="obj.getbhSubject().getValue().profilePic" alt="" ><mat-icon class="icon white-icon" id="iconcol">arrow_drop_down_circle</mat-icon></div>
+          <div class="dropdown-content">
+            <a class="nav-link" routerLink="/userdetails" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon"> person_pin</mat-icon> User Profile</a>
+            <a class="nav-link" routerLink="/apartment/addapartment" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon"> add_location</mat-icon> Add property</a>
+            <a class="nav-link" routerLink="/apartment/myapartments" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon">location_city</mat-icon> My adds</a>
+            <a class="nav-link" routerLink="/cartdetails/cart" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active"><mat-icon class="icon"> turned_in_not</mat-icon>My cart</a>
+            <a class="nav-link ms-1" routerLink="/login" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" routerLinkActive="active" (click)="userlogout()"><fa-icon [icon]="faRightFromBracketicon"></fa-icon> Logout</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
